@@ -69,8 +69,6 @@ for i in phrases_to_remove:
     while string.find(i) != -1:
         string = string.replace(i, "")
 
-print(string)
-
 # Finding definitions:
 next = "y"
 while next == "y":
@@ -151,3 +149,36 @@ while next == "y":
     else:
         string = string[(string.find("ENDPART", fre_sen_end)+1):len(string)]
     next = input("Do you want to scroll to the next definition? Press y to scroll or any key to continue")
+
+# Finner uttale-IPA
+url = "https://fr.wiktionary.org/wiki/" + inp
+result = requests.get(url)
+content = result.content
+soup = BeautifulSoup(content, features="lxml")
+samples = soup.find(id="bodyContent")
+sample = samples.get_text()
+string = html2text.html2text(sample)
+pron_start = string.find("\\")
+pron_end = string.find("\\", pron_start+1)
+pron = string[pron_start:pron_end+1]
+print("Pronunciation: " + pron)
+
+# Finner kjønn:
+string = originalstring
+while string.find("\n") != -1:
+    string = string.replace("\n", " ")
+gender_search_start = string.find("Principales traductionsFrançaisAnglais")
+gender_search_start = gender_search_start + len("Principales traductionsFrançaisAnglais ")
+masculine = inp + " nm"
+feminine = inp + " nf"
+string = string[gender_search_start:len(string)]
+masculine_start = string.find(masculine)
+feminine_start = string.find(feminine)
+if masculine_start == 0:
+    gender = "un"
+elif feminine_start == 0:
+    gender = "une"
+else:
+    gender = ""
+if gender != "":
+    print("Gender: " + gender)
