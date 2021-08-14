@@ -11,6 +11,7 @@ import os
 
 inp = ""
 ankicards = ""
+newsearch = ""
 while inp != "q":
     inp = input("Hvilket ord vil du søke opp? ")
 
@@ -45,7 +46,7 @@ while inp != "q":
     phrases_to_remove = []
     phrases_to_remove.append("traductionsFrançaisAnglais")
     phrases_to_remove.append("verbe transitif: verbe qui sSINGLE1utilise avec un complément dSINGLE1objet direct (COD). Ex : DOUBLE2JSINGLE1écris une lettreDOUBLE2. DOUBLE2Elle a retrouvé son chatDOUBLE2.")
-    phrases_to_remove.append("transitive verb: Verb taking a direct object--for example, DOUBLE2Say something.DOUBLE2 DOUBLE2She found the cat.DOUBLE2")
+    phrases_to_remove.append("vtrtransitive verb: Verb taking a direct object--for example, DOUBLE2Say something.DOUBLE2 DOUBLE2She found the cat.DOUBLE2")
     phrases_to_remove.append("verbal expression: Phrase with special meaning functioning as verb--for example, DOUBLE2put their heads together,DOUBLE2 DOUBLE2come to an end.DOUBLE2")
     phrases_to_remove.append("verbe pronominal: verbe qui sSINGLE1utilise avec le pronom réfléchi DOUBLE2seDOUBLE2, qui sSINGLE1accorde avec le sujet. Ex : se regarder : DOUBLE2Je me regarde dans le miroir. Tu te regardes dans le miroir.DOUBLE2. Les verbes pronominaux se conjuguent toujours avec lSINGLE1auxiliaire DOUBLE2êtreDOUBLE2. Ex : DOUBLE2Elle a lavé la voitureDOUBLE2 mais DOUBLE2Elle sSINGLE1est lavée.DOUBLE2")
     phrases_to_remove.append(": Verb with adverb(s) or preposition(s), having special meaning, divisible--for example, DOUBLE2call offDOUBLE2 [=cancel], DOUBLE2call the game off,DOUBLE2 DOUBLE2call off the game.DOUBLE2")
@@ -57,6 +58,14 @@ while inp != "q":
     phrases_to_remove.append("adjadjective: Describes a noun or pronoun-- for example, DOUBLE2a tall girl,DOUBLE2 DOUBLE2an interesting book,DOUBLE2 DOUBLE2a big house.DOUBLE2 ")
     phrases_to_remove.append("nfnom féminin: sSINGLE1utilise avec les articles DOUBLE2laDOUBLE2, DOUBLE2lSINGLE1DOUBLE2 (devant une voyelle ou un h muet), DOUBLE2uneDOUBLE2. Ex : fille - nf > On dira DOUBLE2la filleDOUBLE2 ou DOUBLE2une filleDOUBLE2. Avec un nom féminin, lSINGLE1adjectif sSINGLE1accorde. En général, on ajoute un DOUBLE2eDOUBLE2 à lSINGLE1adjectif. Par exemple, on dira DOUBLE2une petite filleDOUBLE2. ")
     phrases_to_remove.append("nfnom féminin: sSINGLE1utilise avec les articles DOUBLE2laDOUBLE2, DOUBLE2lSINGLE1DOUBLE2 (devant une voyelle ou un h muet), DOUBLE2uneDOUBLE2. Ex : fille - nf > On dira DOUBLE2la filleDOUBLE2 ou DOUBLE2une filleDOUBLE2. Avec un nom féminin, lSINGLE1adjectif sSINGLE1accorde. En général, on ajoute un DOUBLE2eDOUBLE2 à lSINGLE1adjectif. Par exemple, on dira DOUBLE2une petite filleDOUBLE2. ")
+    phrases_to_remove.append("conjconjunction: Connects words, clauses, and sentences--for example, DOUBLE2and,DOUBLE2 DOUBLE2but,DOUBLE2 DOUBLE2because,DOUBLE2 DOUBLE2in order that.DOUBLE2 in the manner of, following the example of ")
+    phrases_to_remove.append("exprexpression: Prepositional phrase, adverbial phrase, or other phrase or expression--for example, DOUBLE2behind the times,DOUBLE2 DOUBLE2on your own.DOUBLE2 ")
+    phrases_to_remove.append("advadverbe: modifie un adjectif ou un verbe. Est toujours invariable ! Ex : DOUBLE2Elle est très grande.DOUBLE2 DOUBLE2Je marche lentement.DOUBLE2 ")
+    phrases_to_remove.append("advadverb: Describes a verb, adjective, adverb, or clause--for example, DOUBLE2come quickly,DOUBLE2 DOUBLE2very rare,DOUBLE2 DOUBLE2happening now,DOUBLE2 DOUBLE2fall down.DOUBLE2 ")
+    phrases_to_remove.append("preppreposition: Relates noun or pronoun to another element of sentence--for example, DOUBLE2a picture of John,DOUBLE2 DOUBLE2She walked from my house to yours.DOUBLE2 ")
+    phrases_to_remove.append("viverbe intransitif: verbe qui sSINGLE1utilise sans complément dSINGLE1objet direct (COD). Ex : DOUBLE2Il est parti.DOUBLE2 DOUBLE2Elle a ri.DOUBLE2 ")
+    phrases_to_remove.append("viintransitive verb: Verb not taking a direct object--for example, DOUBLE2She jokes.DOUBLE2 DOUBLE2He has arrived.DOUBLE2 ")
+    phrases_to_remove.append("Note: Followed by SINGLE1onSINGLE1, SINGLE1uponSINGLE1, or SINGLE1aroundSINGLE1 ")
 
     for i in phrases_to_remove:
         while string.find(i) != -1:
@@ -72,6 +81,7 @@ while inp != "q":
     phrases_to_remove = []
     phrases_to_remove.append("ⓘCette phrase n'est pas une traduction de la phrase originale.")
     phrases_to_remove.append("Un oubli important ? Signalez une erreur ou suggérez une amélioration. Traductions supplémentairesFrançaisAnglais")
+    phrases_to_remove.append("⇒")
 
 
     for i in phrases_to_remove:
@@ -79,8 +89,8 @@ while inp != "q":
             string = string.replace(i, "")
 
     # Finding definitions:
-    next = "y"
-    while next == "y":
+    next = "m"
+    while next == "m":
         # French Definition
         definition_start = string.find("(")
         definition_end = string.find(")", definition_start)
@@ -90,8 +100,8 @@ while inp != "q":
         eng_def_start = definition_end +1
         eng_def_end = string.find("ENDPART", definition_end)
         eng_def = string[eng_def_start:eng_def_end]
-        if eng_def.find("⇒") != -1:
-            eng_def = eng_def[0:(eng_def.find("⇒"))]
+        # if eng_def.find("⇒") != -1:
+        #     eng_def = eng_def[0:(eng_def.find("⇒"))]
         next_eng_def_start = eng_def_end + 7
         next_eng_def_end = string.find("ENDPART", next_eng_def_start)
         next_search = string[next_eng_def_start:next_eng_def_end]
@@ -116,9 +126,11 @@ while inp != "q":
             iterator = 1
         else:
             iterator = number_sentences
-        fre_sen_start = 0
+        fre_sen_start_reg = re.search('([A-Z]\w+)', search).span() # Passer på å begynne der det er en stor bokstav
+        fre_sen_start = fre_sen_start_reg[0]
         number = 1
-        while iterator != 0 and re.search('[.!?]', search) != None:
+        OK = "undetermined"
+        while iterator != 0 and re.search('[.!?]', search) != None and OK != "":
             fre_sen_end = re.search('[.!?]', search).span()
             fre_sen_end_result = re.search('[.!?]', search)
             fre_sen_end = fre_sen_end[0] +1
@@ -131,11 +143,16 @@ while inp != "q":
             keyword = inp[0:(len(inp)-2)]
             if fre_sen.find(keyword) != 1:
                 remove_word_start = fre_sen.find(keyword)
-                remove_word_end = fre_sen.find(" ", remove_word_start)
-                remove_word = fre_sen[remove_word_start:remove_word_end]
-                sentence_keyword_removed = fre_sen.replace(remove_word, "___")
+                if fre_sen.find(inp) != -1: # Intervention to make sure one can search for expressions, i.e. more than one word
+                    fre_sen_remove = fre_sen.replace(inp, "PLACEHOLDER")
+                else:
+                    fre_sen_remove = fre_sen.replace(keyword, "PLACEHOLDER")
+                remove_word_end = fre_sen_remove.find(" ", remove_word_start)
+                remove_word = fre_sen_remove[remove_word_start:remove_word_end]
+                sentence_keyword_removed = fre_sen_remove.replace(remove_word, "___")
                 print("Sentence with keyword removed: " +  sentence_keyword_removed + "\n")
             else: print("Keyword not found")
+            OK = input("If this is OK, press enter. Else, press m for more")
         #English sentence
         if find_all_dots == 3:
             iterator = 1
@@ -157,7 +174,7 @@ while inp != "q":
             string = string[(string.find("ENDPART", eng_sen_end)+1):len(string)]
         else:
             string = string[(string.find("ENDPART", fre_sen_end)+1):len(string)]
-        next = input("Do you want to scroll to the next definition? Press y to scroll or any key to continue")
+        next = input("Do you want to scroll to the next definition? Press m to scroll or any key to continue")
 
     # Finner uttale-IPA
     url = "https://fr.wiktionary.org/wiki/" + inp
@@ -198,7 +215,7 @@ while inp != "q":
         search = inp
     else:
         search = img_prompt
-
+    image_name = ""
     cont = ""
     while cont != "q":
         if cont == "a":
@@ -210,7 +227,7 @@ while inp != "q":
                 if item.endswith(".jpg"):
                     os.remove(os.path.join(dir_name, item))
         root = Path().cwd()/"images"
-        duckduckgo_search(root, inp, search, max_results=3)
+        duckduckgo_search(root, inp, search, max_results=10)
         image_folder = Path().cwd()/"images"/inp
         images_jpg = "images/" + inp + "/*.jpg"
         images=glob.glob(images_jpg)
@@ -225,7 +242,7 @@ while inp != "q":
             im.show()
             cont = input("Press enter to scroll to next image, s to save, q to quit, or a to give a new search string ")
             if cont == "s":
-                image_name = search +".jpg"
+                image_name = inp +".jpg"
                 im.save(image_name)
                 cont = "q"
             for proc in psutil.process_iter():
@@ -247,11 +264,13 @@ while inp != "q":
         two_cards = "y"
     else:
         two_cards = ""
-    # Lager kort
-    ankicard = sentence_keyword_removed + ";" + image_name + ";" + definition + ";" + inp + ";" + gender + ";" + fre_sen + ";" + pron + ";" + two_cards + ";" + ";" + ";" + ";" + ";"
-    ankicards = ankicards + ankicard + "\n"
     # New prompt?
-    inp = input("Do you want to make another card? Press q to quit or any key to continue: ")
+    inp = input("Do you want to make another card? Press q to quit, x to discard current card and start again, or q to quit: ")
+    if inp != "x":
+        # Lager kort
+        ankicard = sentence_keyword_removed + ";" + image_name + ";" + definition + ";" + inp + ";" + gender + ";" + fre_sen + ";" + pron + ";" + two_cards + ";" + ";" + ";" + ";" + ";"
+        ankicards = ankicards + ankicard + "\n"
+
 
 text_file = open("ankideck.txt", "w")
 n = text_file.write(ankicards)

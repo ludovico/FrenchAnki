@@ -1,3 +1,3 @@
-La rivière déborde et provoque des ___.;<img src="inondation.jpg">;surplus d'eau;inondation;une;La rivière déborde et provoque des inondations.;\i.nɔ̃.da.sjɔ̃\;y;;;;;
-Mon frère possède deux ___.;<img src="cheval.jpg">;animal;cheval;un;Mon frère possède deux chevaux.;\ʃə.val\;y;;;;;
-Cette table est trop lourde, elle n'est pas ___.;<img src="portable.jpg">;transportable;portable;;Cette table est trop lourde, elle n'est pas portable.;\pɔʁ.tabl\;y;;;;;
+Mon ___ aime chasser les souris.;<img src="chat.jpg">;félin domestique;;un;Mon chat aime chasser les souris.;\ʃa\;y;;;;;
+La carotte et les haricots sont des ___.;<img src="légume.jpg">;végétal comestible;;un;La carotte et les haricots sont des légumes.;\le.ɡym\;y;;;;;
+ La Lune ___ autour de la Terre.;<img src="">;COD;q;; La Lune tourne autour de la Terre.;\tuʁ.ne\;;;;;;
