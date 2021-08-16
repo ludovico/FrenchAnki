@@ -252,6 +252,13 @@ while prompt != "q":
                 if proc.name() == "display":
                     proc.kill()
             iterator = iterator +1
+        # Resizing images:
+    basewidth = 130
+    img = Image.open(image_name)
+    wpercent = (basewidth/float(img.size[0]))
+    hsize = int((float(img.size[1])*float(wpercent)))
+    img = img.resize((basewidth,hsize), Image.ANTIALIAS)
+    img.save(image_name)
     # Removes images that are not used
     root_folder = str(root)
     dir_name = root_folder + "/" + inp
