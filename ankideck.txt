@@ -1,3 +1,12 @@
-Mon ___ aime chasser les souris.;<img src="chat.jpg">;félin domestique;;un;Mon chat aime chasser les souris.;\ʃa\;y;;;;;
-La carotte et les haricots sont des ___.;<img src="légume.jpg">;végétal comestible;;un;La carotte et les haricots sont des légumes.;\le.ɡym\;y;;;;;
- La Lune ___ autour de la Terre.;<img src="">;COD;q;; La Lune tourne autour de la Terre.;\tuʁ.ne\;;;;;;
+Olivier agit ___ son grand frère.;<img src="à l'instar de.jpg">;comme;;;Olivier agit à l'instar de son grand frère.;\al‿ɛ̃s.taʁ də\;y;;;;;
+Je ___ tout de suite mon erreur.;<img src="corriger.jpg">;supprimer les erreurs;;;Je corrige tout de suite mon erreur.;\kɔ.ʁi.ʒe\;y;;;;;
+Le maire nous a ___ le projet de la nouvelle gare.;<img src="dévoiler.jpg">;faire découvrir;;;Le maire nous a dévoilé le projet de la nouvelle gare.;\de.vwa.le\;y;;;;;
+Nous avons ___ l'ennemi.;<img src="cerner.jpg">;encercler;;;Nous avons cerné l'ennemi.;\sɛʁ.ne\;y;;;;;
+On ne peut plus ___ de clef dans cette serrure.;<img src="insérer.jpg">;intercaler, introduire;;;On ne peut plus insérer de clef dans cette serrure.;\ɛ̃.se.ʁe\;y;;;;;
+ À l'amour a succédé la ___.;<img src="haine.jpg">;volonté de détruire;tapis;une; À l'amour a succédé la haine.;\ɛn\;y;;;;;
+Nous avons mis un ___ devant le canapé.;<img src="tapis.jpg">;ouvrage textile;;un;Nous avons mis un tapis devant le canapé.;\ta.pi\;y;;;;;
+Vous rencontrerez le directeur ___ notre agent régional.;<img src="par le biais de.jpg">;via l'intervention de [qqn];;;Vous rencontrerez le directeur par le biais de notre agent régional.;;y;;;;;
+Les rebelles ___ le drapeau du tyran déchu.;<img src="déchirer.jpg">;mettre en pièces;;;Les rebelles déchirent le drapeau du tyran déchu.;\de.ʃi.ʁe\;y;;;;;
+Les ___ du dictateur sont incarcérés.;<img src="suppôt.jpg">;complice de [qqn];;un;Les suppôts du dictateur sont incarcérés.;\sy.po\;y;;;;;
+Ne plus imprimer est la nouvelle ___ du patron.;<img src="lubie.jpg">;idée fixe;;une;Ne plus imprimer est la nouvelle lubie du patron.;\ly.bi\;y;;;;;
+La ___ correspond à l'avant du bateau et la poupe à l'arrière.;<img src="proue.jpg">;avant d'un navire;q;une;La proue correspond à l'avant du bateau et la poupe à l'arrière.;\pʁu\;y;;;;;

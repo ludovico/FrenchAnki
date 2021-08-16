@@ -270,8 +270,6 @@ while inp != "q":
         # Lager kort
         ankicard = sentence_keyword_removed + ";" + image_name + ";" + definition + ";" + inp + ";" + gender + ";" + fre_sen + ";" + pron + ";" + two_cards + ";" + ";" + ";" + ";" + ";"
         ankicards = ankicards + ankicard + "\n"
-
-
-text_file = open("ankideck.txt", "w")
-n = text_file.write(ankicards)
-text_file.close()
+        text_file = open("ankideck.txt", "w")
+        n = text_file.write(ankicards)
+        text_file.close()
