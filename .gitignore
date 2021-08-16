@@ -5,8 +5,10 @@
 # scraper output
 ankideck.txt
 images/
+vocab/
 
-
+# move textfile
+move_code.txt
 
 #
 # Python specific (from GitHub)
@@ -150,4 +152,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
