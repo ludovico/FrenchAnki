@@ -14,3 +14,12 @@ Test Spelling,
 Test Pronunciation,
 Test Gender,
 Copy and Paste Area
+
+## Getting started
+
+Install all requirements with
+
+```bash
+pip install -r requirements.txt
+```
+
