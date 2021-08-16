@@ -9,10 +9,10 @@ import glob
 import psutil
 import os
 
-inp = ""
+prompt = ""
 ankicards = ""
 newsearch = ""
-while inp != "q":
+while prompt != "q":
     inp = input("Hvilket ord vil du søke opp? ")
 
     # Definerer de cookiene jeg trenger:
@@ -187,6 +187,9 @@ while inp != "q":
     pron_start = string.find("\\")
     pron_end = string.find("\\", pron_start+1)
     pron = string[pron_start:pron_end+1]
+    # Renser opp:
+    while pron.find("\n") != -1:
+        pron = pron.replace("\n", "")
     print("Pronunciation: " + pron)
 
     # Finner kjønn:
@@ -265,8 +268,8 @@ while inp != "q":
     else:
         two_cards = ""
     # New prompt?
-    inp = input("Do you want to make another card? Press q to quit, x to discard current card and start again, or q to quit: ")
-    if inp != "x":
+    prompt = input("Do you want to make another card? Press q to quit, x to discard current card and start again, or q to quit: ")
+    if prompt != "x":
         # Lager kort
         ankicard = sentence_keyword_removed + ";" + image_name + ";" + definition + ";" + inp + ";" + gender + ";" + fre_sen + ";" + pron + ";" + two_cards + ";" + ";" + ";" + ";" + ";"
         ankicards = ankicards + ankicard + "\n"
