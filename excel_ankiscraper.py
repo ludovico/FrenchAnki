@@ -27,13 +27,13 @@ while prompt != "q":
         usage = df["usage"][row_number]
         print("\n\n" + "Word: " + word)
         print("\n"+ "Usage:" + usage + "\n")
-        decision = input("Do you want to add this word? Press enter to confirm, m to move to next sentence, or t to type word")
+        decision = input("Do you want to add this word? Press enter to confirm, m to move to next sentence, or t to type word: ")
         if decision == "t":
             inp = input("Type word to search for: ")
             new_search = "n"
         if decision == "m":
             new_search = "y"
-        else:
+        elif decision != "t" and decision != "m":
             inp = word
             new_search = "n"
         row_number = row_number +1
@@ -192,8 +192,20 @@ while prompt != "q":
             string = string[(string.find("ENDPART", eng_sen_end)+1):len(string)]
         else:
             string = string[(string.find("ENDPART", fre_sen_end)+1):len(string)]
-        next = input("Do you want to scroll to the next definition? Press m to scroll or any key to continue")
-
+        next = input("Do you want to scroll to the next definition? Press m to scroll, t to type sentence or any key to continue")
+        if next == "t":
+            fre_sen = input("Write your sentence here: ")
+            keyword = inp[0:(len(inp)-2)]
+            if fre_sen.find(keyword) != 1:
+                remove_word_start = fre_sen.find(keyword)
+                if fre_sen.find(inp) != -1: # Intervention to make sure one can search for expressions, i.e. more than one word
+                    fre_sen_remove = fre_sen.replace(inp, "PLACEHOLDER")
+                else:
+                    fre_sen_remove = fre_sen.replace(keyword, "PLACEHOLDER")
+                    remove_word_end = fre_sen_remove.find(" ", remove_word_start)
+                    remove_word = fre_sen_remove[remove_word_start:remove_word_end]
+                    sentence_keyword_removed = fre_sen_remove.replace(remove_word, "___")
+            print("Sentence with keyword removed: " +  sentence_keyword_removed + "\n")
     # Finner uttale-IPA
     url = "https://fr.wiktionary.org/wiki/" + inp
     result = requests.get(url)

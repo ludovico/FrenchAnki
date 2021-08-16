@@ -174,8 +174,20 @@ while prompt != "q":
             string = string[(string.find("ENDPART", eng_sen_end)+1):len(string)]
         else:
             string = string[(string.find("ENDPART", fre_sen_end)+1):len(string)]
-        next = input("Do you want to scroll to the next definition? Press m to scroll or any key to continue")
-
+        next = input("Do you want to scroll to the next definition? Press m to scroll, t to type sentence or any key to continue")
+        if next == "t":
+            fre_sen = input("Write your sentence here: ")
+            keyword = inp[0:(len(inp)-2)]
+            if fre_sen.find(keyword) != 1:
+                remove_word_start = fre_sen.find(keyword)
+                if fre_sen.find(inp) != -1: # Intervention to make sure one can search for expressions, i.e. more than one word
+                    fre_sen_remove = fre_sen.replace(inp, "PLACEHOLDER")
+                else:
+                    fre_sen_remove = fre_sen.replace(keyword, "PLACEHOLDER")
+                    remove_word_end = fre_sen_remove.find(" ", remove_word_start)
+                    remove_word = fre_sen_remove[remove_word_start:remove_word_end]
+                    sentence_keyword_removed = fre_sen_remove.replace(remove_word, "___")
+            print("Sentence with keyword removed: " +  sentence_keyword_removed + "\n")
     # Finner uttale-IPA
     url = "https://fr.wiktionary.org/wiki/" + inp
     result = requests.get(url)
