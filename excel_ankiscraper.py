@@ -15,7 +15,7 @@ excel_folder = Path().cwd()/"vocab"
 df = pd.read_excel(excel_folder/"frenchkindle.xlsx")
 
 
-
+words_later = ""
 prompt = ""
 ankicards = ""
 row_number = 0
@@ -208,11 +208,11 @@ while prompt != "q":
                 fre_sen_remove = fre_sen.replace(inp, "PLACEHOLDER")
             else:
                 fre_sen_remove = fre_sen.replace(keyword, "PLACEHOLDER")
-                remove_word_end = fre_sen_remove.find(" ", remove_word_start)
-                if remove_word_end == -1:
-                    remove_word_end = fre_sen_remove.find(".", remove_word_start)
-                remove_word = fre_sen_remove[remove_word_start:remove_word_end]
-                sentence_keyword_removed = fre_sen_remove.replace(remove_word, "___")
+            remove_word_end = fre_sen_remove.find(" ", remove_word_start)
+            if remove_word_end == -1:
+                remove_word_end = fre_sen_remove.find(".", remove_word_start)
+            remove_word = fre_sen_remove[remove_word_start:remove_word_end]
+            sentence_keyword_removed = fre_sen_remove.replace(remove_word, "___")
     print("Sentence with keyword removed: " +  sentence_keyword_removed + "\n")
     # Finner uttale-IPA
     url = "https://fr.wiktionary.org/wiki/" + inp
