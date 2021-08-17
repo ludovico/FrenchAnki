@@ -2,8 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import html2text
 import re
-# dont't worry, it's designed to work with import *
-from jmd_imagescraper.core import *
+from jmd_imagescraper.core import duckduckgo_search
 from pathlib import Path
 from PIL import Image
 import glob
