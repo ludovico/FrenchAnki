@@ -127,13 +127,13 @@ while prompt != "q":
             iterator = 1
         else:
             iterator = number_sentences
-        fre_sen_start = 0
         if re.search('([A-Z][^.!?]+)', search) != None:
             # Passer på å begynne der det er en stor bokstav
             fre_sen_start_reg = re.search('([A-Z][^.!?]+)', search).span()
             fre_sen_start = fre_sen_start_reg[0]
         else:
             print("Did not find start of French sentence. Please type manually: ")
+            fre_sen_start = 0
         number = 1
         OK = "undetermined"
         while iterator != 0 and re.search('[.!?]', search) != None and OK != "":
@@ -311,6 +311,7 @@ while prompt != "q":
         "Do you want to make another card? Press q to quit, x to discard current card and start again, or q to quit: ")
     if prompt != "x":
         # Lager kort
+        # ankicard = ';'.join([sentence_keyword_removed,image_name,definition,word,gender,fre_sen,pron,two_cards, '', '', '', ''])
         ankicard = sentence_keyword_removed + ";" + image_name + ";" + definition + ";" + word + \
             ";" + gender + ";" + fre_sen + ";" + pron + \
             ";" + two_cards + ";" + ";" + ";" + ";" + ";"
