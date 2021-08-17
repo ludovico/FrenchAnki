@@ -27,7 +27,7 @@ while prompt != "q":
 
     sample = samples.get_text()
 
-    # print(samples)
+    # print(html2text.html2text(sample))
 
     # This is our string:
     string = html2text.html2text(sample)
